@@ -54,7 +54,7 @@ for app in apps['entry']:
 
                 if collection_size < 1000:
                     # populate the destination collection
-                    dcollection_r = requests.post(dcollection_url,auth=(duser,dpassword),verify=False,headers=dcollection_headers,data=scollection_r.text)
+                    dcollection_r = requests.post(dcollection_url,auth=(duser,dpassword),verify=False,headers=dcollection_headers,data=scollection_r.text.encode('utf-8'))
                     if dcollection_r.status_code != 200:
                         print dcollection_r.text
                 else:

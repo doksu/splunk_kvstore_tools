@@ -36,5 +36,5 @@ for app in apps['entry']:
             scollection_r = requests.get(scollection_url,auth=(suser,spassword),verify=False)
         
             print "app=" + app['name'] + " collection=" + collection['name']
-            print scollection_r.text
+            print scollection_r.text.encode('utf-8')
             print
